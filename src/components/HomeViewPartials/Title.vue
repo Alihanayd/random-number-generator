@@ -9,11 +9,6 @@
 <script>
 export default {
   name: "Header",
-  props: {
-    msg: String,
-    minLimit: Number,
-    maxlimit: Number,
-  },
 };
 </script>
 

@@ -1,23 +1,25 @@
 <template>
   <div>
-    <Header />
+    <Title/>
     <Main
-      :randomNumber="parseInt(randomNumber)"
-      @randomNumberMaker="() => randomNumberMaker()"
-      @minValue="minValue = $event"
-      @maxValue="maxValue = $event"
+        :randomNumber="parseInt(randomNumber)"
+        @setRandomNumber="() => setRandomNumber()"
+        :min="minValue"
+        :max="maxValue"
+        @setMin="minValue = $event"
+        @setMax="maxValue = $event"
     />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import Header from "../components/HomeViewPartials/Header.vue";
+import Title from "../components/HomeViewPartials/Title.vue";
 import Main from "../components/HomeViewPartials/Main.vue";
+
 export default {
   name: "HomeView",
   components: {
-    Header,
+    Title,
     Main,
   },
   data() {
@@ -28,13 +30,11 @@ export default {
     };
   },
   methods: {
-    randomNumberMaker() {
-      this.randomNumber =
-        Math.floor(Math.random() * (this.maxValue - this.minValue + 1)) +
-        this.minValue;
-      console.log(this.randomNumber);
-      console.log(this.minValue);
-      console.log(this.maxValue);
+    setRandomNumber() {
+      this.randomNumber = Math.floor(Math.random() * (this.maxValue - this.minValue + 1)) + this.minValue;
+      console.log('Random Number: ', this.randomNumber);
+      console.log('Min Value: ', this.minValue);
+      console.log('Max Value: ', this.maxValue);
     },
   },
 };
