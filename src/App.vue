@@ -5,6 +5,8 @@
 </template>
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +15,7 @@
 #app {
   background-color: #2c363f;
   height: 100vh;
-  width: 100vw;
+  max-width: 100vw;
+  font-family: "Montserrat", sans-serif;
 }
 </style>
