@@ -7,17 +7,19 @@
       </button>
     </div>
     <div class="limit-inputs-container">
-
       <custom-input
-          :label="'Min Limit'"
-          :value="min"
-          @input="(value) => sendMinValue(value)"
+        :label="'Min Limit'"
+        :value="min"
+        @input="(value) => sendMinValue(value)"
+        :placeholder="'Min Limit'"
       />
 
       <custom-input
-          :label="'Max Limit'"
-          :value="max"
-          @input="(value) => sendMaxValue(value)"/>
+        :label="'Max Limit'"
+        :value="max"
+        @input="(value) => sendMaxValue(value)"
+        :placeholder="'Max Limit'"
+      />
     </div>
   </div>
 </template>
@@ -27,7 +29,7 @@ import CustomInput from "@/components/HomeViewPartials/CustomInput.vue";
 
 export default {
   name: "Main",
-  components: {CustomInput},
+  components: { CustomInput },
   props: {
     randomNumber: {
       type: Number,
@@ -40,7 +42,7 @@ export default {
     max: {
       type: Number,
       required: true,
-    }
+    },
   },
   methods: {
     setRandomNumber() {
@@ -57,7 +59,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .generate-button {
   background-color: #6cd4ff;
   border: none;
