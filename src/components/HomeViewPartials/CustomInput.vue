@@ -2,36 +2,38 @@
   <div class="input-container">
     <label for="input">{{ label }}</label>
     <input
-        id="input"
-        :value="value"
-        @input="sendEmit($event.target.value)"
-        type="number"
-        placeholder="Min Limit"
+      id="input"
+      :value="value"
+      @input="sendEmit($event.target.value)"
+      type="number"
+      :placeholder="placeholder"
     />
   </div>
 </template>
 
 <script>
-
 export default {
   name: "CustomInput",
   props: {
     label: {
       type: String,
-      default: ''
+      default: "",
     },
     value: {
       type: Number,
-      required: true
-    }
+      required: true,
+    },
+    placeholder: {
+      type: String,
+      default: "",
+    },
   },
   methods: {
     sendEmit(value) {
       this.$emit("input", parseInt(value));
-    }
-  }
-}
-
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
